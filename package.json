@@ -1,0 +1,11 @@
+{
+  "name": "cloudcms-tmobile",
+  "version": "1.0.0",
+  "description": "Cloud CMS engagement artifacts for the \"cloudcms-tmobile\" project",
+  "main": "index.js",
+  "scripts": {
+    "deploy-content-model": "npx cloudcms-util import -g ./gitana.json --branch master --all-definitions --folder-path ./content-model"
+  },
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,82 @@
+.cloudcms-theme .context-header-logo {
+    background: url("./T-Mobile_New_Logo_Primary_RGB_W-on-M.jpg");
+    height: 48px;
+    width: 333px;
+    background-repeat: no-repeat;
+}
+
+.cloudcms-theme-header.cloudcms-theme-header-platform {
+    background-color: #333333
+}
+
+.cloudcms-theme-header.cloudcms-theme-header-project {
+    background-color: #333333
+}
+
+div[region="workspace-bar"] {
+    background-color: #DFE5E8;
+    min-height: 47px;
+}
+
+.workspace-bar a:visited {
+    color: #000000;
+}
+
+.workspace-bar a {
+    color: #000000;
+}
+
+.workspace-bar {
+    border-top: 1px #4B7D28 solid;
+    border-bottom: 1px #4B7D28 solid
+}
+
+.workspace-bar .form-control {
+    color: #333333;
+}
+
+.workspace-bar a.btn.btn-default {
+    color: #333333;
+}
+
+.project-icon-48, .project-icon-64{
+    display: none;
+}
+
+.cloudcms-theme .context-header-title {
+    display: none;
+}
+
+/* body {
+    background-color: #DFE5E8;
+} */
+
+.tmobile-accordion-panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.tmobile-accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.tmobile-accordion-active, .tmobile-accordion:hover {
+    background-color: #ccc;
+}
+
+#wrap .row .content-holder {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}

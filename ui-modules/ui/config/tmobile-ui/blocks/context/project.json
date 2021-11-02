@@ -1,0 +1,59 @@
+{
+    "evaluator": "and",
+    "condition": [
+        {
+            "evaluator": "project-has-module",
+            "condition": "tmobile-ui"
+        },
+        {
+            "evaluator": "context-project"
+        }
+    ],
+    "config": {
+        "project-context": {
+            "items": [
+                {
+                    "key": "project/content/heading",
+                    "items": [
+                        {
+                            "key": "tmobile-ui/page-list",
+                            "title": "Pages",
+                            "uri": "#/projects/{projectId}/tmobile-ui-page-list",
+                            "iconClass": "fa fa-pencil",
+                            "allowPermission": [
+                                "read"
+                            ]
+                        },
+                        {
+                            "key": "tmobile-ui/page-detail",
+                            "title": "Page",
+                            "uri": "#/projects/{projectId}/tmobile-ui-page-detail",
+                            "iconClass": "fa fa-pencil",
+                            "allowPermission": [
+                                "read"
+                            ]
+                        },
+                        {
+                            "key": "tmobile-ui/component-list",
+                            "title": "Components",
+                            "uri": "#/projects/{projectId}/tmobile-ui-component-list",
+                            "iconClass": "fa fa-pencil",
+                            "allowPermission": [
+                                "read"
+                            ]
+                        },
+                        {
+                            "key": "tmobile-ui/component-detail",
+                            "title": "Component",
+                            "uri": "#/projects/{projectId}/tmobile-ui-component-detail",
+                            "iconClass": "fa fa-pencil",
+                            "allowPermission": [
+                                "read"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

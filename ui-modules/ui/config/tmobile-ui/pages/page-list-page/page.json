@@ -1,0 +1,7 @@
+{
+    "title": "Pages",
+    "uri": "/projects/{projectId}/tmobile-ui-pages-list",
+    "extends": "project/_project",
+    "xtemplate": "page-list-template",
+    "template": "default"
+}

@@ -1,0 +1,10 @@
+{
+	"title": "Component",
+	"description": "",
+	"_qname": "tmobile:component",
+	"_type": "d:type",
+	"type": "object",
+	"_parent": "n:node",
+	"properties": {},
+	"mandatoryFeatures": {}
+}
