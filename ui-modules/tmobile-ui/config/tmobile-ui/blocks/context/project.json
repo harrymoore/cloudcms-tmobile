@@ -17,9 +17,10 @@
                     "items": [
                         {
                             "key": "tmobile-ui/page-list",
-                            "title": "Pages",
+                            "title": "T-Mobile Web Pages",
+                            "index": 1,
                             "uri": "#/projects/{projectId}/tmobile-ui-page-list",
-                            "iconClass": "fa fa-pencil",
+                            "iconClass": "fa fa-files-o",
                             "allowPermission": [
                                 "read"
                             ]
@@ -35,9 +36,10 @@
                         },
                         {
                             "key": "tmobile-ui/component-list",
-                            "title": "Components",
+                            "title": "T-Mobile Shared Components",
+                            "index": 2,
                             "uri": "#/projects/{projectId}/tmobile-ui-component-list",
-                            "iconClass": "fa fa-pencil",
+                            "iconClass": "fa fa-list",
                             "allowPermission": [
                                 "read"
                             ]

@@ -1,6 +1,6 @@
 define(function(require, exports, module) {
 
-    require("css!./page-list.css");
+    // require("css!./page-list.css");
 
     var Ratchet = require("ratchet/web");
     var DocList = require("ratchet/dynamic/doclist");
@@ -93,7 +93,7 @@ define(function(require, exports, module) {
         customizeActionContext: function(actionContext, model, button)
         {
                if (!actionContext.model) { actionContext.model = {}; }
-               actionContext.model.typeQName = "cxindex:company";
+               actionContext.model.typeQName = "tmobile:page";
                actionContext.model.formKey = "master";
         },
 
