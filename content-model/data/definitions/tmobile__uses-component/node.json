@@ -1,0 +1,9 @@
+{
+	"title": "Uses Component",
+	"description": "Track Component Usage",
+	"_qname": "tmobile:uses-component",
+	"_type": "d:association",
+	"type": "object",
+	"_parent": "a:linked",
+	"properties": {}
+}

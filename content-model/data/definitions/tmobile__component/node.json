@@ -1,0 +1,24 @@
+{
+    "title": "Component",
+    "description": "",
+    "_qname": "tmobile:component",
+    "_type": "d:type",
+    "type": "object",
+    "_parent": "n:node",
+    "properties": {
+        "title": {
+            "type": "string",
+            "title": "title",
+            "required": true,
+            "default": ""
+        },
+        "type": {
+            "type": "string",
+            "title": "Component Type",
+            "required": true,
+            "default": "",
+            "enum": ["text", "link"]
+        }
+    },
+    "mandatoryFeatures": {}
+}

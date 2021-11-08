@@ -1,0 +1,28 @@
+{
+    "title": "Page",
+    "engineId": "alpaca1",
+    "fields": {
+        "title": {
+            "type": "text",
+            "label": "Title",
+            "required": true,
+            "default": ""
+        },
+        "rowOneComponents": {
+            "type": "array",
+            "label": "Row One Components",
+            "required": false,
+            "items": {
+                "type": "object",
+                "label": "rowOneComponents",
+                "fields": {
+                    "component": {
+                        "$ref": "qname://tmobile/component/master"
+                    }
+                }
+            }
+        }
+    },
+    "_type": "n:form",
+    "description": ""
+}
