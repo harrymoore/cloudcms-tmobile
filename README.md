@@ -24,9 +24,9 @@ Cloud CMS engagement artifacts for cloudcms-tmobile project
     This Module implements the customizations to the Cloud CMS UI or Alpaca form fields.
 
     From Manage Platform / Modules register and deploy a new module:
-    ID: cloudcms-tmobile-ui
-    Title: cloudcms-tmobile-ui
+    ID: tmobile-module
+    Title: tmobile-module
     Type: github
-    URL: https://github.com/...git
-    Path: /ui-modules/ui
+    URL: https://github.com/harrymoore/cloudcms-tmobile
+    Path: /modules/ui
     Branch: master
