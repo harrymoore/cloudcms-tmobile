@@ -54,9 +54,9 @@ define(function(require, exports, module) {
 
             if (OneTeam.isEmptyOrNonExistent(query) && searchTerm)
             {
-                query = OneTeam.searchQuery(searchTerm, ["title", "clientid"]);
+                query = OneTeam.searchQuery(searchTerm, ["title", "slug"]);
             }
-            query._type = "cxindex:company";
+            query._type = "tmobile:page";
             // if (user) {
             //     query._system = {
             //         modified_by: user.name
