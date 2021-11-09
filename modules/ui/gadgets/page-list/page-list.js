@@ -54,7 +54,7 @@ define(function(require, exports, module) {
 
             if (OneTeam.isEmptyOrNonExistent(query) && searchTerm)
             {
-                query = OneTeam.searchQuery(searchTerm, ["title", "slug"]);
+                query = OneTeam.searchQuery(searchTerm, ["title"]);
             }
             query._type = "tmobile:page";
             // if (user) {
