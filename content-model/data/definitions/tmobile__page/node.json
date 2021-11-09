@@ -19,7 +19,7 @@
                 "title": "rowOneComponents",
                 "properties": {
                     "component": {
-                        "$ref": "qname://tmobile:component"
+                        "$ref": "qname://tmobile/component"
                     }
                 }
             }

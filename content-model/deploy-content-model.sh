@@ -10,7 +10,8 @@
 # npx cloudcms-util import -g ../gitana-localhost-test1.json --branch master --all-definitions
 
 # harry's dev projects:
-npx cloudcms-util import -g ../gitana-harry-tmobile.json --branch master --all-definitions
+# npx cloudcms-util import -g ../gitana-harry-tmobile.json --branch master --all-definitions
+npx cloudcms-util import -g ../gitana-mt85-tmobile.json -a
 
 # T-Mobile projects:
 # npx cloudcms-util import -g ../gitana-tmobile-prod.json --branch master --all-definitions

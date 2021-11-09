@@ -23,6 +23,16 @@
             }
         }
     },
+	"Xview": {
+		"parent": "bootstrap-edit",
+		"layout": {
+			"template": "<div>\n\n    <div class=\"row\">\n        <div class=\"col-md-6\" id=\"left\">\n\n        </div>\n        <div class=\"col-md-6\" id=\"right\">\n\n        </div>\n    </div>\n\n</div>        \n",
+			"bindings": {
+				"text1": "#left",
+				"text3": "#right"
+			}
+		}
+	},
     "_type": "n:form",
     "description": ""
 }
