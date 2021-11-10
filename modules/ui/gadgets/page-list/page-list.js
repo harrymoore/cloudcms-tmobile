@@ -101,7 +101,7 @@ define(function(require, exports, module) {
         {
             var self = this;
             var projectId = self.observable("project").get().getId();
-            var clientid = row.clientid;
+            var clientid = row._doc;
 
             var value = this.base(row, item);
 
@@ -111,7 +111,7 @@ define(function(require, exports, module) {
 
                 value =  "<h2 class='list-row-info title'>";
                 value += "<a href='" + linkUri + "'>";
-                value += OneTeam.filterXss(row.title || row.clientid) + " (" + OneTeam.filterXss(row.clientid) + ")";
+                value += OneTeam.filterXss(row.title || row._doc) + " (" + OneTeam.filterXss(row.clientid) + ")";
                 value += "</a>";
                 value += "</h2>";
 

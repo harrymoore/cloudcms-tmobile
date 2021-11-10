@@ -18,7 +18,7 @@
                         {
                             "key": "tmobile-ui/page-list",
                             "title": "Pages",
-                            "order": 0,
+                            "order": 1,
                             "uri": "#/projects/{projectId}/tmobile-ui-page-list",
                             "iconClass": "fa fa-files-o",
                             "allowPermission": [
@@ -28,7 +28,7 @@
                         {
                             "key": "tmobile-ui/component-list",
                             "title": "Shared Components",
-                            "order": 1,
+                            "order": 2,
                             "uri": "#/projects/{projectId}/tmobile-ui-component-list",
                             "iconClass": "fa fa-list",
                             "allowPermission": [
