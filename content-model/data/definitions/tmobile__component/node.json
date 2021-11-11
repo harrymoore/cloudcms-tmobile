@@ -12,13 +12,75 @@
             "required": true,
             "default": ""
         },
+        "pageType": {
+            "type": "string",
+            "description": "Which page types is this component eligable for use",
+            "title": "pageType",
+            "multiple": true,
+            "required": true,
+            "default": "1x3layout",
+            "enum": [
+                "1x3layout",
+                "2x2layout"
+            ]
+        },
         "type": {
             "type": "string",
             "title": "Component Type",
             "required": true,
             "default": "",
-            "enum": ["text", "link"]
-        }
+            "enum": [
+                "text",
+                "link",
+                "cta"
+            ]
+        },
+        "text": {
+            "type": "string",
+            "title": "Text"
+        },
+        "link": {
+            "type": "string",
+            "title": "Link URL"
+        },
+        "cta": {
+			"type": "object",
+			"title": "Call To Action Component with Image, Text, and Link",
+			"properties": {
+				"text": {
+					"type": "string",
+					"title": "Text"
+				},
+				"link": {
+					"type": "string",
+					"title": "Link"
+				},
+				"image": {
+					"type": "object",
+					"_relator": {
+						"nodeType": "tmobile:image",
+						"mappings": [
+							{
+								"from": "target",
+								"fromProperty": "/metadata",
+								"toProperty": "./metadata"
+							}
+						]
+					}
+				}
+			}
+		}
     },
-    "mandatoryFeatures": {}
+    "dependencies": {
+        "text": [
+            "type"
+        ],
+        "link": [
+            "type"
+        ],
+        "cta": [
+            "type"
+        ]
+    },
+   "mandatoryFeatures": {}
 }

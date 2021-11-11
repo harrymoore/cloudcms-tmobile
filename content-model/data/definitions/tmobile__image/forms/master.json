@@ -1,0 +1,38 @@
+{
+	"title": "Page",
+	"engineId": "alpaca1",
+	"fields": {
+		"title": {
+			"type": "text",
+			"label": "Title",
+			"required": true,
+			"default": ""
+		},
+		"metadata": {
+			"type": "object",
+			"label": "Metadata",
+			"required": false,
+			"fields": {
+				"alt": {
+					"type": "text",
+					"label": "Alt Text",
+					"required": true,
+					"default": ""
+				},
+				"description": {
+					"type": "text",
+					"label": "Description",
+					"required": true,
+					"default": ""
+				},
+				"source": {
+					"type": "text",
+					"label": "Source",
+					"required": true,
+					"default": ""
+				}
+			}
+		}
+	},
+	"description": "T-Mobile Image"
+}

@@ -19,15 +19,7 @@
 			]
 		},
 		"type": {
-			"type": "select",
-			"label": "Component Type",
-			"required": true,
-			"default": "",
-			"optionLabels": [
-				"Text",
-				"Link URL",
-				"Call to Action"
-			]
+			"type": "hidden"
 		},
         "text": {
             "type": "textarea",

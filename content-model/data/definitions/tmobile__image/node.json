@@ -1,0 +1,33 @@
+{
+    "title": "Image",
+    "description": "Specialize image files for use as components and to store extra metadata (alt, source, description, etc)",
+    "type": "object",
+    "_parent": "n:node",
+    "properties": {
+        "title": {
+            "type": "string",
+            "title": "title",
+            "default": ""
+        },
+        "metadata": {
+            "type": "object",
+            "title": "metadata",
+            "required": false,
+            "properties": {
+                "alt": {
+                    "type": "string",
+                    "title": "Alt text"
+                },
+                "description": {
+                    "type": "string",
+                    "title": "description"
+                },"source": {
+                    "type": "string",
+                    "title": "Source"
+                }
+            }
+        }
+    },
+    "mandatoryFeatures": {},
+    "$schema": "http://json-schema.org/draft-04/schema#"
+}
