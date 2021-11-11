@@ -131,23 +131,17 @@ define(function(require, exports, module) {
                     value += "<p class='list-row-info created'>Created " + bundle.relativeDate(date);
                     value += " by " + OneTeam.filterXss(systemMetadata.created_by) + "</p>";
                 }
-            } else if (item.key === "steps") {
-                var engagement = row.engagement || [];
-                var completed = 0;
-                for(i = 0; i < engagement.length; i++) {
-                    if (engagement[i].completed) {
-                        completed++;
-                    }
+            } else if (item.key === "pageType") {
+                value = "<p>" + row.pageType + "</p>";
+            } else if (item.key === "sharedComponents") {
+                var components = ((row.layout1 && row.layout1.useSharedComponents) ? row.layout1.useSharedComponents : []);
+                components.concat((row.layout2 && row.layout2.useSharedComponents) ? row.layout2.useSharedComponents : []);
+                value = components.length + " components(s) used";
+                for(i = 0; i < components.length; i++) {
+                    value += "<li><p class='list-row-info>" + OneTeam.filterXss(components[i].title) + "</p></li>";
+                    value += "<p class='list-row-info>" + OneTeam.filterXss(components[i].type) + "</p>";
                 }
-                value = "<p>Completed " + completed + " of " + engagement.length + " engagement steps</p>";
-            } else if (item.key === "resources") {
-                var resources = row.resources || [];
-                value = resources.length + " resource(s) attached";
-                // for(i = 0; i < resources.length; i++) {
-                    // value += "<li><p class='list-row-info>" + OneTeam.filterXss(resources[i].ResourceTitle) + "</p></li>";
-                //     value += "<p class='list-row-info>" + OneTeam.filterXss(resources[i].ResourceTitle) + "</p>";
-                // }
-                // value += "</ul>";
+                value += "</ul>";
             }
 
             return value;
