@@ -1,5 +1,5 @@
 {
-    "title": "Pages",
+    "title": "Components",
     "uri": "/projects/{projectId}/tmobile-ui-component-list",
     "extends": "project/_project",
     "template": "default"

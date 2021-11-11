@@ -85,6 +85,14 @@ define(function(require, exports, module) {
             return "/#/projects/" + project._doc + "/documents/" + row._doc + "/properties";
         },
 
+        _componentLinkUri: function(row, model, context)
+        {
+            var self = this;
+            var project = self.observable("project").get();
+
+            return "/#/projects/" + project._doc + "/documents/" + row.id + "/properties";
+        },
+
         iconClass: function(row)
         {
             return "form-icon-32";
@@ -122,24 +130,37 @@ define(function(require, exports, module) {
                 if (row.__system()) {
                     var systemMetadata = row.__system();
 
-                    var date;
-                    date = new Date(systemMetadata.modified_on.ms);
-                    value += "<p class='list-row-info modified'>Modified " + bundle.relativeDate(date);
-                    value += " by " + OneTeam.filterXss(systemMetadata.modified_by) + "</p>";
+                    // var date;
+                    // date = new Date(systemMetadata.modified_on.ms);
+                    // value += "<p class='list-row-info modified'>Modified " + bundle.relativeDate(date);
+                    // value += " by " + OneTeam.filterXss(systemMetadata.modified_by) + "</p>";
 
-                    date = new Date(systemMetadata.created_on.ms);
-                    value += "<p class='list-row-info created'>Created " + bundle.relativeDate(date);
-                    value += " by " + OneTeam.filterXss(systemMetadata.created_by) + "</p>";
+                    // date = new Date(systemMetadata.created_on.ms);
+                    // value += "<p class='list-row-info created'>Created " + bundle.relativeDate(date);
+                    // value += " by " + OneTeam.filterXss(systemMetadata.created_by) + "</p>";
                 }
             } else if (item.key === "pageType") {
                 value = "<p>" + row.pageType + "</p>";
             } else if (item.key === "sharedComponents") {
-                var components = ((row.layout1 && row.layout1.useSharedComponents) ? row.layout1.useSharedComponents : []);
-                components.concat((row.layout2 && row.layout2.useSharedComponents) ? row.layout2.useSharedComponents : []);
+                var components = [];
+                if (row.layout1 && row.layout1.useSharedComponents) {
+                    components.push(row.layout1.useSharedComponents);
+                }
+                if (row.layout2 && row.layout2.useSharedComponents) {
+                    components.push(row.layout2.useSharedComponents);
+                }
+
                 value = components.length + " components(s) used";
                 for(i = 0; i < components.length; i++) {
-                    value += "<li><p class='list-row-info>" + OneTeam.filterXss(components[i].title) + "</p></li>";
-                    value += "<p class='list-row-info>" + OneTeam.filterXss(components[i].type) + "</p>";
+                    var linkUri = this._componentLinkUri(components[i], model, context);
+
+                    value +=  "<h2 class='list-row-info title'>";
+                    value += "<a href='" + linkUri + "'>";
+                    value += OneTeam.filterXss(components[i].title || row.id) + " (" + OneTeam.filterXss(components[i].typeQName) + ")";
+                    value += "</a>";
+                    value += "</h2>";
+
+                    // value += "<p class='list-row-info'>" + OneTeam.filterXss(components[i].title) + " (" + OneTeam.filterXss(components[i].typeQName) + ")</p>";
                 }
                 value += "</ul>";
             }
