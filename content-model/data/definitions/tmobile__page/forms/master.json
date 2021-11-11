@@ -1,38 +1,125 @@
 {
-    "title": "Page",
-    "engineId": "alpaca1",
-    "fields": {
-        "title": {
-            "type": "text",
-            "label": "Title",
-            "required": true,
-            "default": ""
-        },
-        "rowOneComponents": {
-            "type": "array",
-            "label": "Row One Components",
-            "required": false,
-            "items": {
-                "type": "object",
-                "label": "rowOneComponents",
-                "fields": {
-                    "component": {
-                        "$ref": "qname://tmobile/component/master"
-                    }
-                }
-            }
-        }
-    },
-	"Xview": {
-		"parent": "bootstrap-edit",
-		"layout": {
-			"template": "<div>\n\n    <div class=\"row\">\n        <div class=\"col-md-6\" id=\"left\">\n\n        </div>\n        <div class=\"col-md-6\" id=\"right\">\n\n        </div>\n    </div>\n\n</div>        \n",
-			"bindings": {
-				"text1": "#left",
-				"text3": "#right"
+	"title": "Page",
+	"engineId": "alpaca1",
+	"fields": {
+		"title": {
+			"type": "text",
+			"label": "Title",
+			"required": true,
+			"default": ""
+		},
+		"seo": {
+			"type": "object",
+			"label": "Seo",
+			"required": false,
+			"fields": {
+				"keywords": {
+					"type": "text",
+					"label": "Keywords",
+					"required": true,
+					"default": ""
+				},
+				"description": {
+					"type": "text",
+					"label": "Description",
+					"required": true
+				}
+			}
+		},
+		"pageType": {
+			"type": "select",
+			"label": "Page Type",
+			"required": true,
+			"default": "",
+			"optionLabels": [
+				"1x3 Grid Layout",
+				"2x2 Grid Layout"
+			]
+		},
+		"layout1": {
+			"type": "object",
+			"label": "2x2 Component Grid",
+			"required": false,
+			"dependencies": {
+				"pageType": "1x3layout"
+			},
+			"fields": {
+				"useSharedComponents": {
+					"type": "node-picker",
+					"label": "Using Shared Component",
+					"required": false,
+					"picker": {
+						"typeQName": "tmobile:component",
+						"associationType": "tmobile:uses-component",
+						"includeChildTypes": true,
+                        "picker": {
+                            "query": {
+                                "_type": "tmobile:component",
+                                "pageType": "1x3layout"
+                            }
+                        }
+					}
+				},
+				"rowOneComponents": {
+					"type": "array",
+					"label": "Row One Components",
+					"required": false,
+					"items": {
+						"type": "object",
+						"label": "rowOneComponents",
+						"fields": {
+                            "component": {
+                                "$ref": "qname://tmobile/component/page-form"
+                            }
+						}
+					}
+				}
+			}
+		},
+		"layout2": {
+			"type": "object",
+			"label": "1x3 Component Grid",
+			"required": false,
+			"dependencies": {
+				"pageType": "2x2layout"
+			},
+			"fields": {
+				"useSharedComponents": {
+					"type": "node-picker",
+					"label": "Using Shared Component",
+					"required": false,
+					"picker": {
+						"typeQName": "n:node",
+						"associationType": "a:linked",
+						"includeChildTypes": false
+					}
+				},
+				"rowOneComponents": {
+					"type": "array",
+					"label": "Row One Components",
+					"required": false,
+					"items": {
+						"type": "object",
+						"label": "rowOneComponents",
+						"fields": {
+                            "component": {
+                                "$ref": "qname://tmobile/component/page-form"
+                            }
+						}
+					}
+				}
 			}
 		}
 	},
-    "_type": "n:form",
-    "description": ""
+	"Xview": {
+		"parent": "bootstrap-edit",
+		"layout": {
+			"template": "<div><div class=\"row\"><div class=\"col-md-6\" id=\"left\"></div><div class=\"col-md-6\" id=\"right\"></div></div></div>",
+			"bindings": {
+				"grid1Component": "#left",
+				"grid2Component": "#right"
+			}
+		}
+	},
+	"description": ""
 }
