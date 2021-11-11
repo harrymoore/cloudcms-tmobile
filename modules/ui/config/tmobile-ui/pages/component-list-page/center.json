@@ -17,16 +17,12 @@
                 "key": "component"
             },
             {
-                "title": "",
+                "title": "Type",
                 "key": "type"
             },
             {
-                "title": "",
-                "key": "sharable"
-            },
-            {
-                "title": "",
-                "key": "pages using component"
+                "title": "In Use By",
+                "key": "pages"
             }
         ],
         "icon": true,

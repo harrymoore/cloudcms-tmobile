@@ -111,7 +111,7 @@ define(function(require, exports, module) {
 
                 value =  "<h2 class='list-row-info title'>";
                 value += "<a href='" + linkUri + "'>";
-                value += OneTeam.filterXss(row.title || row.clientid) + " (" + OneTeam.filterXss(row.clientid) + ")";
+                value += OneTeam.filterXss(row.title || row._doc);
                 value += "</a>";
                 value += "</h2>";
 
@@ -131,15 +131,8 @@ define(function(require, exports, module) {
                     value += "<p class='list-row-info created'>Created " + bundle.relativeDate(date);
                     value += " by " + OneTeam.filterXss(systemMetadata.created_by) + "</p>";
                 }
-            } else if (item.key === "steps") {
-                var engagement = row.engagement || [];
-                var completed = 0;
-                for(i = 0; i < engagement.length; i++) {
-                    if (engagement[i].completed) {
-                        completed++;
-                    }
-                }
-                value = "<p>Completed " + completed + " of " + engagement.length + " engagement steps</p>";
+            } else if (item.key === "type") {
+                value = "<p>" + row.type + "</p>";
             } else if (item.key === "resources") {
                 var resources = row.resources || [];
                 value = resources.length + " resource(s) attached";

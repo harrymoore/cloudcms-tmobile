@@ -119,7 +119,7 @@ define(function(require, exports, module) {
 
                 value =  "<h2 class='list-row-info title'>";
                 value += "<a href='" + linkUri + "'>";
-                value += OneTeam.filterXss(row.title || row._doc) + " (" + OneTeam.filterXss(row.clientid) + ")";
+                value += OneTeam.filterXss(row.title || row._doc);
                 value += "</a>";
                 value += "</h2>";
 
